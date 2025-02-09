@@ -23,7 +23,6 @@ body {
   align-items: center;
   width: 100%;
   height: 10%;
-  background-color: red;
 }
 
 .main_content_container {
@@ -33,18 +32,18 @@ body {
   align-items: center;
   width: 100%;
   height: 90%;
-  background-color: green;
+
 }
 
 .task_container {
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 35%;
   height: 70%;
-  background-color: gray;
   justify-content: space-between;
+  background-color: gray;
 }
 
 .button_container {
@@ -54,14 +53,20 @@ body {
   align-items: center;
   width: 100%;
   height: 10%;
-  background-color: black;
 
   button {
     border: none;
     width: 150px;
     height: 50px;
     border-radius: 25px;
-    font-size: 15px;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px black;
+    transition: 0.1s all ease;
+  }
+
+  button:hover {
+    background-color: red;
+    box-shadow: 5px 5px 15px black;
   }
 }
 
@@ -70,25 +75,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 90%;
   overflow-y: scroll;
+  overflow: visible;
 
   ul {
     width: 100%;
     height: 100%;
-    background-color: blue;
     list-style-type: none;
-    overflow-x: hidden;
     li{
       height: 50px;
       display: flex;
       align-items: center;
       padding: 10px;
       margin: 10px;
-      background-color: white;
+      background-color: rgb(245, 131, 131);
+      color: white;
+      transition: 0.2s all ease;
+      box-shadow: 2px 2px 5px black;
+      justify-content: space-between;
     }
-  }
-}
 
-/*This is for demonstration only*/
+    li:hover {
+      transform: scale(1.1);
+      margin-bottom: 50px;
+      box-shadow: 5px 5px 15px black;
+
+    }
+  } 
+}
