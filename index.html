@@ -16,36 +16,12 @@
     <div class = "task_container">
 
       <div class = "tasks">
-        <ul>
-         <li>
-          <p>Bateekh</p>
-            <div>
-              <button class="tick_btn">&#10003;</button>
-              <button class="del_btn">&#10005;</button>
-            </div>
-         </li>
-
-         <li>
-
-          <p>Bateekh</p>
-            <div>
-              <button class="tick_btn">&#10003;</button>
-              <button class="del_btn">&#10005;</button>
-            </div>
-         </li>
-
-         <li>
-          <p>Bateekh</p>
-            <div>
-              <button class="tick_btn">&#10003;</button>
-              <button class="del_btn">&#10005;</button>
-            </div>
-         </li>
+        <ul id="tasks_list">
         </ul>
       </div>
 
       <div class = "button_container">
-        <button class="add_btn">
+        <button class="add_btn" onclick="add_task()">
           +
         </button>
 
@@ -61,7 +37,32 @@
 
 
 <script>
-  //insert JS here
+
+//we need to add 4 functionalities
+//add
+//update
+//delete
+//complete -> acts as delete
+//save all tasks in local storage
+let tasks;
+if (!localStorage.getItem('Tasks')) {
+  localStorage.setItem("Tasks", tasks);
+}
+tasks = [];
+
+
+function add_task() {
+  let task = prompt("Enter Task Name: ");
+  tasks.push(task);
+  localStorage.setItem("Tasks",tasks); //modifies the todo list
+  document.getElementById('tasks_list').innerHTML += `<li>
+    <p>${task}</p>
+    <div>
+      <button class='tick_btn'>&#10003;</button>
+      <button class='del_btn'>&#10005;</button>
+    </div>
+  </li>`;
+}
 </script>
 </body>
 </html>
