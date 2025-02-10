@@ -93,10 +93,9 @@ body {
   width: 100%;
   height: 90%;
   overflow-y: scroll;
-  overflow: visible;
 
   ul {
-    width: 100%;
+    width: 96%;
     height: 100%;
     list-style-type: none;
     li{
@@ -134,7 +133,7 @@ body {
     }
 
     li:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       margin-bottom: 50px;
       box-shadow: 5px 5px 15px black;
 
