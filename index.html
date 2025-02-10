@@ -44,17 +44,35 @@
 //delete
 //complete -> acts as delete
 //save all tasks in local storage
-let tasks;
-if (!localStorage.getItem('Tasks')) {
+let tasks = localStorage.getItem("Tasks") || [];
+if (tasks.length == 0) {
+  // there is no data, create an entry and start modifying it
   localStorage.setItem("Tasks", tasks);
 }
-tasks = [];
+else {
+  //if there is data, we need to extract it because local storage has its own isues
+  tasks = JSON.parse(localStorage.getItem("Tasks"));
+  // need to display data onto the application itself
+  for (let i = 0; i < tasks.length; i++) {
+    //for each task display it by adding it without the add function
+    //add function appends to the tasks list, I want to simply put old content
+    document.getElementById('tasks_list').innerHTML += `<li>
+      <p>${tasks[i]}</p>
+      <div>
+        <button class='tick_btn'>&#10003;</button>
+        <button class='del_btn'>&#10005;</button>
+      </div>
+    </li>`;
+  }
+
+}
+
 
 
 function add_task() {
   let task = prompt("Enter Task Name: ");
   tasks.push(task);
-  localStorage.setItem("Tasks",tasks); //modifies the todo list
+  localStorage.setItem("Tasks",JSON.stringify(tasks)); //modifies the todo list
   document.getElementById('tasks_list').innerHTML += `<li>
     <p>${task}</p>
     <div>
