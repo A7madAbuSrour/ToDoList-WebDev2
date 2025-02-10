@@ -93,7 +93,6 @@ body {
   width: 100%;
   height: 90%;
   overflow-y: scroll;
-
   ul {
     width: 96%;
     height: 100%;
@@ -109,6 +108,7 @@ body {
       transition: 0.2s all ease;
       box-shadow: 2px 2px 5px black;
       justify-content: space-between;
+
       button {
         width: 30px;
         height: 30px;
